@@ -7,7 +7,7 @@ conda create -y -n 250829-pytorch-cuda python=3.11
 conda activate 250829-pytorch-cuda
 ```
 
-## Install pytorch 2.7.1 + cudatoolkit 11.8
+## Install PyTorch 2.7.1 (cu118)
 
 ```sh
 # https://pytorch.org/get-started/previous-versions/
@@ -18,9 +18,10 @@ pip install torch==2.7.1 torchvision==0.22.1 --index-url https://download.pytorc
 ## Install This Package
 
 ```sh
-pip install .
-# or
-# rm -rf build; pip install .
+pip install ninja
+pip install . -v --no-build-isolation
+# or first run
+# rm -rf build
 ```
 
 ## Use This Package
