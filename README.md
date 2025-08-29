@@ -3,8 +3,8 @@
 ## Create Environment
 
 ```sh
-conda create -y -n 250829-pytorch-cuda python=3.11
-conda activate 250829-pytorch-cuda
+conda create -y -n 250830-pytorch-cuda python=3.11
+conda activate 250830-pytorch-cuda
 ```
 
 ## Install PyTorch 2.7.1 (cu118)

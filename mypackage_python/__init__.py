@@ -1,4 +1,4 @@
-import mypackage_cpp
+import mypackage_cuda
 
 import torch
 
@@ -22,7 +22,7 @@ def add(a: torch.Tensor, b: torch.Tensor) -> torch.Tensor:
 
     result = torch.zeros_like(a).contiguous()
 
-    mypackage_cpp.add_cpp(
+    mypackage_cuda.add_cpp(
         a.contiguous().data_ptr(),
         b.contiguous().data_ptr(),
         result.data_ptr(),

@@ -17,8 +17,11 @@ setuptools.setup(
     ext_modules=[
         # https://docs.pytorch.org/docs/stable/cpp_extension.html
         torch.utils.cpp_extension.CUDAExtension(
-            name="mypackage_cpp",
-            sources=["mypackage_cpp/ext.cpp", "mypackage_cpp/src/add.cpp"],
+            name="mypackage_cuda",
+            sources=[
+                "mypackage_cuda/ext.cpp",
+                "mypackage_cuda/src/add.cu",
+            ],
         )
     ],
     # https://docs.pytorch.org/tutorials/advanced/cpp_extension.html
