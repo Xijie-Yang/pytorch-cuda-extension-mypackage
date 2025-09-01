@@ -19,7 +19,8 @@ pip install torch==2.7.1 torchvision==0.22.1 --index-url https://download.pytorc
 
 ```sh
 pip install ninja
-pip install . -v --no-build-isolation
+# only for RTX 4090, check https://developer.nvidia.com/cuda-gpus
+TORCH_CUDA_ARCH_LIST=8.9 pip install . -v --no-build-isolation
 # or first run
 # rm -rf build
 ```
@@ -34,36 +35,36 @@ python main.py
 
 ```
 ---- n=1000000 ----
-[LOG] n=1000000 add_cpu_pytorch(): 0.002204 s
+[LOG] n=1000000 add_cpu_pytorch(): 0.002833 s
 [C LOG] Enter add_cpp().
-[LOG] n=1000000 mypackage_python.add_cpu_cpp(): 0.001387 s
-[LOG] n=1000000 add_gpu_pytorch(): 0.010462 s
+[LOG] n=1000000 mypackage_python.add_cpu_cpp(): 0.001371 s
+[LOG] n=1000000 add_gpu_pytorch(): 0.009897 s
 [C LOG] Enter add_cuda().
-[LOG] n=1000000 mypackage_python.add_gpu_cuda(): 0.001738 s
+[LOG] n=1000000 mypackage_python.add_gpu_cuda(): 0.001682 s
 
 ---- n=10000000 ----
-[LOG] n=10000000 add_cpu_pytorch(): 0.006083 s
+[LOG] n=10000000 add_cpu_pytorch(): 0.005089 s
 [C LOG] Enter add_cpp().
-[LOG] n=10000000 mypackage_python.add_cpu_cpp(): 0.010207 s
-[LOG] n=10000000 add_gpu_pytorch(): 0.002807 s
+[LOG] n=10000000 mypackage_python.add_cpu_cpp(): 0.010221 s
+[LOG] n=10000000 add_gpu_pytorch(): 0.002089 s
 [C LOG] Enter add_cuda().
-[LOG] n=10000000 mypackage_python.add_gpu_cuda(): 0.000259 s
+[LOG] n=10000000 mypackage_python.add_gpu_cuda(): 0.000258 s
 
 ---- n=100000000 ----
-[LOG] n=100000000 add_cpu_pytorch(): 0.018145 s
+[LOG] n=100000000 add_cpu_pytorch(): 0.017594 s
 [C LOG] Enter add_cpp().
-[LOG] n=100000000 mypackage_python.add_cpu_cpp(): 0.112159 s
-[LOG] n=100000000 add_gpu_pytorch(): 0.025093 s
+[LOG] n=100000000 mypackage_python.add_cpu_cpp(): 0.096648 s
+[LOG] n=100000000 add_gpu_pytorch(): 0.016231 s
 [C LOG] Enter add_cuda().
-[LOG] n=100000000 mypackage_python.add_gpu_cuda(): 0.002878 s
+[LOG] n=100000000 mypackage_python.add_gpu_cuda(): 0.002885 s
 
 ---- n=1000000000 ----
-[LOG] n=1000000000 add_cpu_pytorch(): 0.611425 s
+[LOG] n=1000000000 add_cpu_pytorch(): 0.322058 s
 [C LOG] Enter add_cpp().
-[LOG] n=1000000000 mypackage_python.add_cpu_cpp(): 1.358379 s
-[LOG] n=1000000000 add_gpu_pytorch(): 0.231321 s
+[LOG] n=1000000000 mypackage_python.add_cpu_cpp(): 1.050182 s
+[LOG] n=1000000000 add_gpu_pytorch(): 0.144807 s
 [C LOG] Enter add_cuda().
-[LOG] n=1000000000 mypackage_python.add_gpu_cuda(): 0.029303 s
+[LOG] n=1000000000 mypackage_python.add_gpu_cuda(): 0.029351 s
 ```
 
 ## References
