@@ -20,7 +20,8 @@ setuptools.setup(
             name="mypackage_cuda",
             sources=[
                 "mypackage_cuda/ext.cpp",
-                "mypackage_cuda/src/add.cu",
+                "mypackage_cuda/src/add_cpu.cpp",
+                "mypackage_cuda/src/add_gpu.cu",
             ],
         )
     ],
