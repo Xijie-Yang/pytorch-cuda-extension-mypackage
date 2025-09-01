@@ -4,8 +4,8 @@ import mypackage_python
 
 n = 100
 
-a = torch.rand((n,), dtype=torch.float)
-b = torch.rand((n,), dtype=torch.float)
+a = torch.rand((n,), dtype=torch.float, device="cuda")
+b = torch.rand((n,), dtype=torch.float, device="cuda")
 
 result = mypackage_python.add(a, b)
 

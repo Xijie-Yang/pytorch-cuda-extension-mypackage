@@ -14,6 +14,7 @@ def add(a: torch.Tensor, b: torch.Tensor) -> torch.Tensor:
     assert a.ndim == 1 and b.ndim == 1
     assert a.shape == b.shape
     assert a.dtype == torch.float and b.dtype == torch.float
+    assert a.is_cuda and b.is_cuda
 
     n = a.shape[0]
 
